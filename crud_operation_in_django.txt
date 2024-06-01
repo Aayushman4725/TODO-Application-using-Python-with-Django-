@@ -1,0 +1,22 @@
+##Crud operations in Django
+
+Inserting data in the database
+
+For inserting data in the database from the front end we use <form> tag.
+The method inside the form tag should be POST and action should have the path/name of the path.
+
+for eg:
+
+<form action="{% url 'addTask' %}" method="POST">
+	<input name='task' />
+	<button type="submit">Add</button>
+</form>
+
+Now in the views.py we enter:
+
+def addTask(request):
+	task = request.POST['task'] #task is the name that we gave to the <input> tag above
+	Task.objects.create(task=task)
+	return redirect('home')
+ #here the first task is from the models.py and the second task is the variable which we defined "task = request.POST['task']"
+# redirect() function as the name suggests redirects us to the home page which we name 'home' in the urls.py of project folder.
