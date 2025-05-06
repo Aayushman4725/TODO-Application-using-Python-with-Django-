@@ -68,6 +68,12 @@ TEMPLATES = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://todo.aayushmanamatya.com.np',
+    'https://www.todo.aayushmanamatya.com.np',
+]
+
+
 WSGI_APPLICATION = 'todo_main.wsgi.application'
 
 
